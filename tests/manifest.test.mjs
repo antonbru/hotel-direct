@@ -34,3 +34,9 @@ test('в коде нет удалённого кода и eval', () => {
     assert.equal(/http:\/\//u.test(code), false, `${file}: http`);
   }
 });
+
+test('имя и short_name укладываются в лимиты Opera', () => {
+  assert.ok([...manifest.name].length <= 45, 'name: максимум 45 символов');
+  assert.ok([...manifest.short_name].length <= 12, 'short_name: максимум 12 символов');
+  assert.ok([...manifest.description].length <= 132, 'description: максимум 132 символа');
+});

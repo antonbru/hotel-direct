@@ -67,7 +67,7 @@ Python 3 с Pillow — только для перегенерации иконо
 ```bash
 git clone https://github.com/antonbru/hotel-direct.git
 cd hotel-direct
-npm run check   # синтаксис + манифест + 20 тестов
+npm run check   # синтаксис + манифест + 21 тест
 npm run build   # dist/hotel-direct-<версия>.zip
 ```
 

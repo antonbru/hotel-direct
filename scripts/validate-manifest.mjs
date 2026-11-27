@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Проверки манифеста и пакета под правила Chrome Web Store для этого расширения.
+// Проверки манифеста и пакета под правила Chrome Web Store и Opera Add-ons.
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { dirname, extname, join, relative, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -52,6 +52,17 @@ export function validateManifest() {
   if (manifest.manifest_version !== 3) errors.push('manifest_version должен быть 3');
   if (!manifest.name || !manifest.description) errors.push('нужны name и description');
   if (!/^\d+\.\d+\.\d+$/u.test(String(manifest.version))) errors.push('version должен быть вида 1.0.0');
+
+  // Лимиты Opera Add-ons: linter режет short_name длиннее 12 символов.
+  if (manifest.name && [...manifest.name].length > 45) {
+    errors.push('name длиннее 45 символов (лимит Opera)');
+  }
+  if (manifest.short_name && [...manifest.short_name].length > 12) {
+    errors.push('short_name длиннее 12 символов (лимит Opera)');
+  }
+  if (manifest.description && [...manifest.description].length > 132) {
+    errors.push('description длиннее 132 символов (лимит Opera)');
+  }
 
   for (const permission of manifest.permissions ?? []) {
     if (!ALLOWED_PERMISSIONS.has(permission)) errors.push(`лишнее разрешение: ${permission}`);

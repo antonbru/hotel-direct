@@ -1,6 +1,12 @@
-# Политика конфиденциальности расширения «Отель напрямую»
+# Политика конфиденциальности расширения «Прямые брони»
 
-Последнее обновление: 26 ноября 2026.
+Последнее обновление: 27 ноября 2026.
+
+> **English summary.** Direct Bookings collects no personal data, browsing history or
+> cookies. It keeps settings, a hidden-hotel list and a 30-day registry cache
+> locally in the browser. The only network request goes to the public registry at
+> `tourism.fsa.gov.ru` and carries only the hotel ID taken from the page the user
+> opened. No data is sent to third parties, and the extension earns no commission.
 
 ## Какие данные обрабатываются
 

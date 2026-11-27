@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="docs/brand/icon-1024.png" width="88" alt="Иконка «Отель напрямую»">
+<img src="docs/brand/icon-1024.png" width="88" alt="Иконка «Прямые брони»">
 
-# Отель напрямую
+# Прямые брони
 
-**Бесплатное расширение для Chrome и Яндекс Браузера: на странице отеля в агрегаторе
+**Бесплатное расширение для Chrome, Яндекс Браузера и Opera: на странице отеля в агрегаторе
 показывает его официальный сайт и телефон — чтобы бронировать напрямую, без комиссии посредника.**
 
 [![CI](https://github.com/antonbru/hotel-direct/actions/workflows/ci.yml/badge.svg)](https://github.com/antonbru/hotel-direct/actions/workflows/ci.yml)
@@ -13,6 +13,7 @@
 [![Manifest V3](https://img.shields.io/badge/manifest-v3-0f766e)](extension/manifest.json)
 [![Chrome](https://img.shields.io/badge/Chrome-138%2B-4285F4?logo=googlechrome&logoColor=white)](#-установка)
 [![Yandex Browser](https://img.shields.io/badge/Yandex%20Browser-supported-FF0000)](#-установка)
+[![Opera](https://img.shields.io/badge/Opera-supported-FF1B2D?logo=opera&logoColor=white)](#-установка)
 [![Stars](https://img.shields.io/github/stars/antonbru/hotel-direct?style=social)](https://github.com/antonbru/hotel-direct/stargazers)
 
 [🎬 Демо](#-демо) · [🚀 Установка](#-установка) · [⚙️ Как работает](#️-как-это-работает) · [🤝 Участие](#-участие-в-разработке) · [🗺️ Планы](#️-планы)
@@ -45,10 +46,10 @@
 
 ## 🚀 Установка
 
-Пока расширение ставится вручную (публикация в Chrome Web Store — в [планах](#️-планы)).
+Пока расширение ставится вручную (публикация в Chrome Web Store и Opera Add-ons — в [планах](#️-планы)).
 
 1. Скачайте `hotel-direct-x.y.z.zip` из [Releases](https://github.com/antonbru/hotel-direct/releases) и распакуйте.
-2. Откройте `chrome://extensions` (в Яндекс Браузере — `browser://extensions`).
+2. Откройте `chrome://extensions` (в Яндекс Браузере — `browser://extensions`, в Opera — `opera:extensions`).
 3. Включите **Режим разработчика** → **Загрузить распакованное расширение** → выберите папку.
 4. Откройте карточку отеля на [Островке](https://ostrovok.ru) или [101hotels](https://101hotels.com).
 
@@ -116,7 +117,7 @@
 Нужен только Node.js 20+. У самого расширения внешних зависимостей нет.
 
 ```bash
-npm run check   # синтаксис + валидация манифеста + 20 тестов
+npm run check   # синтаксис + валидация манифеста + 21 тест
 npm run build   # dist/hotel-direct-<версия>.zip
 npm run live -- "<url карточки отеля>"   # проверка в headless Chrome + скриншот
 ```
@@ -158,7 +159,7 @@ docs/brand/              логотип: SVG-исходник, растры, п�
 - [x] Фолбэк на состояние страницы, когда блока «Аккредитация» нет в DOM
 - [ ] Яндекс Путешествия (SPA + капча, нужен спайк по DOM)
 - [ ] Вшитый индекс реестра и сопоставление по названию + координатам
-- [ ] Публикация в Chrome Web Store (и установка в Яндекс Браузер оттуда же)
+- [ ] Публикация в Chrome Web Store и Opera Add-ons (и установка в Яндекс Браузер оттуда же)
 - [ ] Английская версия README и интерфейса
 - [ ] Ночная проверка на живых карточках в CI
 

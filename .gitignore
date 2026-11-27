@@ -3,3 +3,6 @@
 dist/
 node_modules/
 *.log
+
+# Готовый пакет для загрузки живёт в GitHub Releases, не в дереве
+store/opera/*.zip

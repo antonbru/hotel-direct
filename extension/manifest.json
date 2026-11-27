@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Отель напрямую",
-  "short_name": "Отель напрямую",
-  "version": "0.1.2",
+  "name": "Прямые брони",
+  "short_name": "Прямые",
+  "version": "0.1.3",
   "description": "На агрегаторе показывает официальный сайт и телефон отеля: можно забронировать напрямую, без комиссии посредника.",
   "permissions": [
     "storage"
@@ -28,7 +28,7 @@
     }
   ],
   "action": {
-    "default_title": "Отель напрямую",
+    "default_title": "Прямые брони",
     "default_icon": {
       "16": "icons/icon16.png",
       "32": "icons/icon32.png"

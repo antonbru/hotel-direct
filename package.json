@@ -1,9 +1,9 @@
 {
   "name": "hotel-direct",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "type": "module",
-  "description": "Расширение Chrome и Яндекс Браузера: на агрегаторе показывает официальный сайт и телефон отеля из реестра Росаккредитации.",
+  "description": "Расширение Chrome, Яндекс Браузера и Opera: на агрегаторе показывает официальный сайт и телефон отеля из реестра Росаккредитации.",
   "scripts": {
     "test": "node scripts/run-tests.mjs",
     "validate": "node scripts/validate-manifest.mjs",
@@ -12,7 +12,10 @@
     "build": "bash scripts/build.sh",
     "check": "npm run syntax && npm run validate && npm test",
     "live": "node scripts/live-check.mjs",
-    "promo": "node scripts/render-promo.mjs"
+    "promo": "node scripts/render-promo.mjs",
+    "store:capture": "node scripts/store-capture.mjs",
+    "store:shots": "node scripts/store-shots.mjs",
+    "promo:opera": "node scripts/render-opera-promo.mjs"
   },
   "license": "MIT",
   "devDependencies": {
