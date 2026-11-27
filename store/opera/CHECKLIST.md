@@ -24,7 +24,7 @@ Opera-линтер проверяет не только `name`, но и `short_n
 | Артефакт | Файл | Проверка |
 |---|---|---|
 | Пакет для загрузки | `hotel-direct-0.1.3.zip` из [Releases](https://github.com/antonbru/hotel-direct/releases/latest) | manifest.json в корне, 15 файлов, 22 КБ |
-| Контрольная сумма | — | `89037f4c96889e5fcc64d1b1bee35ecfbd9975cc69fd3eda8cac6d8fc3cb5003` |
+| Контрольная сумма | `SHA256SUMS.txt` в релизе | у релизного ассета `2133cc5c…`; локальная сборка может дать другой хеш из-за меток времени |
 | Иконка 128×128 | `store/opera/icons/icon-128.png` | PNG, прозрачный фон, тот же стиль, что 16/32/48 |
 | Иконка 512×512 | `store/opera/icons/icon-512.png` | запасной размер, если дашборд попросит больше |
 | Скриншот 1 | `store/opera/screenshots/01-ostrovok.png` | 612×408, белый фон, карточка на Островке |
