@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="extension/icons/icon128.png" width="88" alt="Иконка «Отель напрямую»">
+<img src="docs/brand/icon-1024.png" width="88" alt="Иконка «Отель напрямую»">
 
 # Отель напрямую
 
