@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Тесты и сборка
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Проверки (синтаксис, манифест, тесты)
+        run: npm run check
+      - name: Сборка zip
+        run: npm run build
+      - name: Артефакт
+        uses: actions/upload-artifact@v4
+        with:
+          name: hotel-direct-zip
+          path: dist/*.zip
+          if-no-files-found: error

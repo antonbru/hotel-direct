@@ -1,0 +1,43 @@
+name: 💡 Идея или новый агрегатор
+description: Предложить функцию, поддержку сайта или улучшение
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Идеи приветствуются. Опишите задачу, а не только решение — так проще выбрать реализацию.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Какую задачу решаем
+      description: Что неудобно сейчас, у кого болит
+      placeholder: На Яндекс Путешествиях карточка не появляется, а это пятая часть рынка
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Предлагаемое решение
+      description: Как это могло бы работать. Если есть примеры в других расширениях — ссылки
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Альтернативы
+      description: Что ещё рассматривали и почему не подходит
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: Соблюдение принципов проекта
+      options:
+        - label: Предложение не требует партнёрских ссылок, комиссии или сбора данных
+          required: true
+        - label: Предложение не ломает интерфейс агрегатора (никаких автопереходов и подмены цен)
+          required: true

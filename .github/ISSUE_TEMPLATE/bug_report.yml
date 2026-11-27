@@ -1,0 +1,65 @@
+name: 🐞 Баг: карточка не появилась или данные неверные
+description: Что-то не работает на странице отеля
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо, что сообщаете о проблеме. Чем точнее данные — тем быстрее починим.
+        Если проблема с конкретной карточкой отеля, ссылка обязательна.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: Что случилось
+      description: Что вы ожидали увидеть и что увидели
+      placeholder: Открыл карточку отеля, карточка расширения не появилась
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Ссылка на страницу отеля
+      description: Полный URL карточки агрегатора
+      placeholder: https://ostrovok.ru/hotel/russia/tver/mid11253536/orsha_river_club_hotel/
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Браузер
+      options:
+        - Chrome
+        - Яндекс Браузер
+        - Chromium
+        - Другой Chromium-браузер
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Версия расширения
+      description: Видна в настройках расширения или в chrome://extensions
+      placeholder: 0.1.1
+    validations:
+      required: true
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Ошибки расширения
+      description: chrome://extensions → «Ошибки» на карточке расширения. Если пусто — напишите «нет»
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Скриншот
+      description: Перетащите картинку сюда, если есть
+    validations:
+      required: false
