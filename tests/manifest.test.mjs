@@ -20,9 +20,13 @@ test('MV3 и минимум разрешений', () => {
   assert.deepEqual(manifest.host_permissions, ['https://tourism.fsa.gov.ru/*']);
 });
 
-test('content script ограничен двумя агрегаторами', () => {
+test('content script ограничен разрешёнными агрегаторами', () => {
   const matches = manifest.content_scripts.flatMap((entry) => entry.matches);
-  assert.deepEqual(matches.sort(), ['*://*.101hotels.com/*', '*://*.ostrovok.ru/*']);
+  assert.deepEqual(matches.sort(), [
+    '*://*.101hotels.com/*',
+    '*://*.ostrovok.ru/*',
+    '*://*.travel.yandex.ru/*',
+  ]);
 });
 
 test('в коде нет удалённого кода и eval', () => {

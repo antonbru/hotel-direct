@@ -1,6 +1,6 @@
 {
   "name": "hotel-direct",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "description": "Расширение Chrome, Яндекс Браузера и Opera: на агрегаторе показывает официальный сайт и телефон отеля из реестра Росаккредитации.",

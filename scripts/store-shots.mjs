@@ -53,6 +53,17 @@ const SHOTS = [
     left: 330,
     top: 6,
   },
+  {
+    file: '04-yandex.png',
+    tab: 'The Carlton Moscow — Яндекс Путешествия',
+    url: 'travel.yandex.ru/hotels/moscow/the-carlton-moscow',
+    // Живая страница отдаёт капчу автоматизации, поэтому исходник — сохранённая
+    // копия страницы, открытая через локальное HTTPS-зеркало с этим же расширением.
+    // Рецепт: store/opera/CHECKLIST.md, раздел «Скриншот с Яндекса».
+    image: dataUri(join(SRC, 'yandex-page.png')),
+    scale: 584 / 810,
+    top: 308,
+  },
 ];
 
 const LOCK = `<svg viewBox="0 0 16 16" width="10" height="10" aria-hidden="true"><path fill="#5f6368" d="M8 1a3 3 0 0 0-3 3v2H4.5A1.5 1.5 0 0 0 3 7.5v6A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5v-6A1.5 1.5 0 0 0 11.5 6H11V4a3 3 0 0 0-3-3Zm-1.5 5V4a1.5 1.5 0 1 1 3 0v2h-3Z"/></svg>`;

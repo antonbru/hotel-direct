@@ -85,6 +85,35 @@
   let shadow = null;
   let busy = false;
 
+  // Переход внутри SPA: инлайн-скрипт со состоянием остался от прошлого отеля.
+  // Такие случаи разрешаем повтором запроса страницы — но не чаще трёх раз на URL.
+  let staleHref = '';
+  let staleAttempts = 0;
+  let resolved = { href: '', data: null };
+
+  /**
+   * Запрашивает ту же страницу (свой origin, без новых разрешений) и берёт
+   * SSR-состояние уже нужного отеля.
+   */
+  async function resolveStale(href) {
+    if (staleHref === href && staleAttempts >= 3) return null;
+    if (staleHref === href) staleAttempts += 1;
+    else {
+      staleHref = href;
+      staleAttempts = 1;
+    }
+    try {
+      const response = await fetch(href, { credentials: 'include' });
+      if (!response.ok) return null;
+      const hotel = extract.hotelFromYandexHtml(await response.text());
+      if (!hotel || !extract.yandexSlugMatches(hotel, href)) return null;
+      const data = extract.dataFromYandexHotel(hotel);
+      return data.uuid ? data : null;
+    } catch {
+      return null;
+    }
+  }
+
   function removeCard() {
     if (host) {
       host.remove();
@@ -230,7 +259,21 @@
 
     // Скрипт-состояние страницы сканируем только первые ~13 секунд: дальше это
     // бессмысленная нагрузка на страницах, где отеля нет вовсе.
-    const data = extract.extractFromDom(document, { deep: emptyTicks < 15 });
+    let data = extract.extractFromDom(document, { deep: emptyTicks < 15 });
+
+    if (data.stale) {
+      if (resolved.href === href && resolved.data) {
+        data = resolved.data;
+      } else {
+        const fresh = await resolveStale(href);
+        if (location.href !== href) return;
+        if (fresh) {
+          data = fresh;
+          resolved = { href, data: fresh };
+        }
+      }
+    }
+
     const hrefChanged = href !== currentHref;
     currentHref = href;
 

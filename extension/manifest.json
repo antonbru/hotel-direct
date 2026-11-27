@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Прямые брони",
   "short_name": "Прямые",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "На агрегаторе показывает официальный сайт и телефон отеля: можно забронировать напрямую, без комиссии посредника.",
   "permissions": [
     "storage"
@@ -18,7 +18,8 @@
     {
       "matches": [
         "*://*.ostrovok.ru/*",
-        "*://*.101hotels.com/*"
+        "*://*.101hotels.com/*",
+        "*://*.travel.yandex.ru/*"
       ],
       "js": [
         "content/extract.js",

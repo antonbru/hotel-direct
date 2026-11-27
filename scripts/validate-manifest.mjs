@@ -9,7 +9,7 @@ const EXTENSION_DIR = join(ROOT, 'extension');
 
 const ALLOWED_PERMISSIONS = new Set(['storage']);
 const ALLOWED_HOSTS = new Set(['https://tourism.fsa.gov.ru/*']);
-const ALLOWED_AGGREGATORS = ['*://*.ostrovok.ru/', '*://*.101hotels.com/'];
+const ALLOWED_AGGREGATORS = ['*://*.ostrovok.ru/', '*://*.101hotels.com/', '*://*.travel.yandex.ru/'];
 const FORBIDDEN_CODE = [
   [/\beval\s*\(/u, 'eval('],
   [/\bnew\s+Function\s*\(/u, 'new Function('],
