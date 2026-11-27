@@ -55,7 +55,7 @@ SHA-256 релизного пакета — в `SHA256SUMS.txt` рядом с а
 ## Как пересобрать
 
 ```bash
-npm run check                  # синтаксис, манифест, 21 тест
+npm run check                  # синтаксис, манифест, 27 тестов
 npm run build                  # dist/hotel-direct-0.2.0.zip
 cp dist/hotel-direct-0.2.0.zip store/opera/
 ```
