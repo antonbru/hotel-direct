@@ -1,0 +1,21 @@
+{
+  "name": "hotel-direct",
+  "version": "0.1.1",
+  "private": true,
+  "type": "module",
+  "description": "Расширение Chrome и Яндекс Браузера: на агрегаторе показывает официальный сайт и телефон отеля из реестра Росаккредитации.",
+  "scripts": {
+    "test": "node scripts/run-tests.mjs",
+    "validate": "node scripts/validate-manifest.mjs",
+    "syntax": "node scripts/check-syntax.mjs",
+    "icons": "python3 scripts/make-icons.py",
+    "build": "bash scripts/build.sh",
+    "check": "npm run syntax && npm run validate && npm test",
+    "live": "node scripts/live-check.mjs",
+    "promo": "node scripts/render-promo.mjs"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "playwright-core": "^1.49.0"
+  }
+}

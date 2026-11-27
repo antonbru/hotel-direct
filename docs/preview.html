@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Отель Cosmos Selection Москва Арбат — превью карточки</title>
+    <style>
+      body {
+        margin: 0;
+        background: #f4f5f7;
+        color: #111827;
+        font: 400 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      }
+      .top {
+        height: 56px;
+        background: #fff;
+        border-bottom: 1px solid rgba(17, 24, 39, 0.08);
+        display: flex;
+        align-items: center;
+        padding: 0 24px;
+        font-weight: 600;
+        color: #0b5cd5;
+      }
+      .mock {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 24px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 24px;
+      }
+      .photo {
+        height: 240px;
+        border-radius: 14px;
+        background: linear-gradient(120deg, #dbe4ef, #c9d6e6);
+        margin-bottom: 16px;
+      }
+      h1 {
+        font-size: 26px;
+        line-height: 1.2;
+        margin: 0 0 6px;
+      }
+      .addr,
+      .meta {
+        color: #6b7280;
+        font-size: 14px;
+      }
+      .stars {
+        color: #f59e0b;
+        letter-spacing: 2px;
+        margin: 8px 0;
+      }
+      .aside {
+        background: #fff;
+        border-radius: 14px;
+        padding: 16px;
+        height: fit-content;
+        box-shadow: 0 2px 8px rgba(17, 24, 39, 0.06);
+      }
+      .price {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .book {
+        display: block;
+        margin-top: 12px;
+        text-align: center;
+        background: #0b5cd5;
+        color: #fff;
+        padding: 12px;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+      .hint {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 24px 24px;
+        color: #6b7280;
+        font-size: 12px;
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Hotel",
+        "identifier": "13369156",
+        "name": "Отель Cosmos Selection Москва Арбат",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "улица Новый Арбат, 2, Москва",
+          "addressLocality": "Москва"
+        },
+        "geo": { "@type": "PostalAddress", "latitude": "55.75326156616211", "longitude": "37.59944534301758" }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="top">Островок</div>
+    <main class="mock">
+      <section>
+        <div class="photo"></div>
+        <h1>Отель Cosmos Selection Москва Арбат 4*</h1>
+        <div class="stars">★★★★</div>
+        <div class="addr">улица Новый Арбат, 2, Москва</div>
+        <p class="meta">Демо-страница для проверки карточки расширения. Реальная разметка Островка не копируется.</p>
+      </section>
+      <aside class="aside">
+        <div class="price">13 200 ₽</div>
+        <div class="meta">за ночь, без taxes</div>
+        <span class="book">Забронировать</span>
+      </aside>
+    </main>
+    <div class="hint">Превью: карточка расширения слева внизу, поверх макета страницы.</div>
+
+    <a
+      hidden
+      href="https://tourism.fsa.gov.ru/ru/resorts/hotels/4b943899-6153-11f0-bb42-5b3927de99dd/about-resort"
+      >С772025005143</a
+    >
+
+    <script>
+      // Заглушки chrome.* для запуска настоящего card.js вне расширения.
+      // ?mode=phone — отель без сайта, ?mode=empty — ни сайта, ни телефона.
+      const mode = new URLSearchParams(location.search).get('mode') || 'site';
+      const site = { url: 'https://arbat.cosmosgroup.ru', host: 'arbat.cosmosgroup.ru' };
+      const phone = { tel: '+74951500502', pretty: '+7 495 150-05-02' };
+      const hotel =
+        mode === 'phone'
+          ? { name: 'Отель Cosmos Selection Москва Арбат', site: null, phone }
+          : mode === 'empty'
+            ? null
+            : { name: 'Отель Cosmos Selection Москва Арбат', site, phone };
+
+      window.chrome = {
+        runtime: {
+          lastError: null,
+          sendMessage(_message, callback) {
+            callback({ ok: true, data: hotel });
+          },
+        },
+        storage: {
+          local: {
+            get: async () => ({}),
+            set: async () => {},
+          },
+          onChanged: { addListener() {} },
+        },
+      };
+    </script>
+    <script src="../extension/content/extract.js"></script>
+    <script src="../extension/content/card.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Отель напрямую — настройки</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="head">
+        <h1>Отель напрямую</h1>
+        <p class="lead">
+          На странице отеля в агрегаторе показывает его официальный сайт и телефон из
+          Единого реестра объектов классификации (Росаккредитация).
+        </p>
+      </header>
+
+      <section class="card">
+        <label class="row">
+          <input type="checkbox" id="enabled" />
+          <span>
+            <strong>Показывать карточку</strong>
+            <small>Если выключить, карточка не появится ни на одной странице.</small>
+          </span>
+        </label>
+      </section>
+
+      <section class="card">
+        <div class="row row--static">
+          <span>
+            <strong>Скрытые отели</strong>
+            <small id="hidden-count">—</small>
+          </span>
+          <button type="button" id="clear-hidden" class="btn">Сбросить</button>
+        </div>
+      </section>
+
+      <section class="card card--muted">
+        <p>
+          Данные: <a href="https://tourism.fsa.gov.ru" target="_blank" rel="noopener noreferrer">tourism.fsa.gov.ru</a>.
+          Расширение не собирает историю, не ставит cookies и не передаёт данные третьим лицам.
+          Ссылка ведёт на сайт отеля напрямую — комиссию с брони мы не берём.
+        </p>
+        <p class="version">Версия <span id="version">—</span></p>
+      </section>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>

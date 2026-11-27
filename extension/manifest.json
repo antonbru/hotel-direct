@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "Отель напрямую",
+  "short_name": "Отель напрямую",
+  "version": "0.1.1",
+  "description": "На агрегаторе показывает официальный сайт и телефон отеля: можно забронировать напрямую, без комиссии посредника.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://tourism.fsa.gov.ru/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.ostrovok.ru/*",
+        "*://*.101hotels.com/*"
+      ],
+      "js": [
+        "content/extract.js",
+        "content/card.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Отель напрямую",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
