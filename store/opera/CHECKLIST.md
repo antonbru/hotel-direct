@@ -125,13 +125,15 @@ shasum -a 256 store/opera/hotel-direct-0.2.0.zip
       сервиса; GitHub сюда не подходит, это прямо запрещено подсказкой поля.
 - [ ] **Extension support page URL** — `https://github.com/antonbru/hotel-direct`
 - [ ] **Extension source code URL (public)** — `https://github.com/antonbru/hotel-direct`
-- [ ] **Extension source code URL (required only for Opera moderators)** — тот же
-      репозиторий. Код не минифицирован, но ссылку лучше заполнить.
+- [ ] **Extension source code URL (required only for Opera moderators)** —
+      `https://github.com/antonbru/hotel-direct/tree/v0.2.0` (для 0.1.3 —
+      `/tree/v0.1.3`). Ссылка должна соответствовать загруженному пакету.
 - [ ] **Build instructions** — скопировать блок из `LISTING.md`:
 
 ```text
 git clone https://github.com/antonbru/hotel-direct.git
 cd hotel-direct
+git checkout v0.2.0
 npm run check
 npm run build
 ```

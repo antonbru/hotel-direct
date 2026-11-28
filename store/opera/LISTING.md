@@ -183,7 +183,7 @@ The extension collects no personal data, no browsing history and no cookies. It 
 | **Service website URL** | **Оставить пустым.** У расширения нет собственного сервиса; поле прямо не предназначено для GitHub-профилей. Ссылка на реестр тоже не подходит — мы им не владеем. |
 | **Extension support page URL** | `https://github.com/antonbru/hotel-direct` |
 | **Extension source code URL (public)** | `https://github.com/antonbru/hotel-direct` |
-| **Extension source code URL (required only for Opera moderators)** | `https://github.com/antonbru/hotel-direct` |
+| **Extension source code URL (required only for Opera moderators)** | `https://github.com/antonbru/hotel-direct/tree/v0.2.0` (для 0.1.3 — `/tree/v0.1.3`) |
 | **Build instructions** | блок ниже |
 | **License URL** | `https://github.com/antonbru/hotel-direct/blob/main/LICENSE` |
 | **Full license text** | **Оставить пустым** — достаточно URL выше |
@@ -195,13 +195,18 @@ The extension collects no personal data, no browsing history and no cookies. It 
 ```text
 git clone https://github.com/antonbru/hotel-direct.git
 cd hotel-direct
+git checkout v0.2.0
 npm run check
 npm run build
 ```
 
 `npm run build` не минифицирует и не собирает бандл: он только упаковывает
-папку `extension/` в `dist/hotel-direct-0.1.3.zip`. Нужен Node.js 20+ и `zip`;
+папку `extension/` в `dist/hotel-direct-0.2.0.zip`. Нужен Node.js 20+ и `zip`;
 внешних зависимостей у расширения нет.
+
+Если в дашборде ещё 0.1.3 — замените `v0.2.0` на `v0.1.3` и имя zip на
+`hotel-direct-0.1.3.zip`. Но лучше сначала обновить пакет до 0.2.0: в нём
+поддержка Яндекс Путешествий и четвёртый скриншот.
 
 ### Про лицензию
 
