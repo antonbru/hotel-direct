@@ -9,7 +9,8 @@
 | Файл | Куда |
 |---|---|
 | `hotel-direct-0.2.0.zip` | пакет для мастера Opera; готовый — в [Releases](https://github.com/antonbru/hotel-direct/releases/latest), локально собирается `npm run build` |
-| `icons/icon-128.png` | иконка карточки (если дашборд попросит отдельно) |
+| `icons/icon-64.png` | иконка для Media: форма требует 64×64 |
+| `icons/icon-128.png` | запасная иконка каталога |
 | `icons/icon-512.png` | запасной размер иконки |
 | `screenshots/01-ostrovok.png` | скриншот 1: карточка на Островке, 612×408 |
 | `screenshots/02-101hotels.png` | скриншот 2: карточка на 101hotels, 612×408 |

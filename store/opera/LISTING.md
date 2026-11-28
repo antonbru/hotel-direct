@@ -17,7 +17,7 @@ Opera показывает описание как обычный текст с 
 | Политика конфиденциальности | `https://github.com/antonbru/hotel-direct/raw/main/docs/PRIVACY.md` |
 | Исходный код для ревью | `https://github.com/antonbru/hotel-direct` (MIT, без минификации) |
 | Платформы, где проверено | **macOS 27.0.1, Opera 139.0.6053.38** |
-| Иконка | `store/opera/icons/icon-128.png` (128×128 PNG) |
+| Иконка | `store/opera/icons/icon-64.png` (64×64 — требуется в Media) |
 | Скриншоты | `store/opera/screenshots/01-ostrovok.png`, `02-101hotels.png`, `03-options.png`, `04-yandex.png` (612×408) |
 | Промо-изображение (опционально) | `store/opera/promo/300x188.png` (300×188) |
 | Пакет | `store/opera/hotel-direct-0.2.0.zip` |
