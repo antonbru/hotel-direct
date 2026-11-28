@@ -173,3 +173,42 @@ The extension collects no personal data, no browsing history and no cookies. It 
 ```
 Расширение не собирает персональные данные, историю просмотров и cookies. В нём нет аналитики, аккаунтов и рекламных идентификаторов. Единственный внешний запрос идёт в публичный реестр tourism.fsa.gov.ru и содержит только ID отеля со страницы, которую открыл пользователь. Настройки и кэш реестра хранятся локально и удаляются вместе с расширением.
 ```
+
+---
+
+## Поля General в дашборде Opera
+
+| Поле | Что вписать |
+|---|---|
+| **Service website URL** | **Оставить пустым.** У расширения нет собственного сервиса; поле прямо не предназначено для GitHub-профилей. Ссылка на реестр тоже не подходит — мы им не владеем. |
+| **Extension support page URL** | `https://github.com/antonbru/hotel-direct` |
+| **Extension source code URL (public)** | `https://github.com/antonbru/hotel-direct` |
+| **Extension source code URL (required only for Opera moderators)** | `https://github.com/antonbru/hotel-direct` |
+| **Build instructions** | блок ниже |
+| **License URL** | `https://github.com/antonbru/hotel-direct/blob/main/LICENSE` |
+| **Full license text** | **Оставить пустым** — достаточно URL выше |
+| **Privacy policy URL** | `https://github.com/antonbru/hotel-direct/blob/main/docs/PRIVACY.md` |
+| **Full privacy policy text** | **Оставить пустым** — достаточно URL выше |
+
+### Build instructions
+
+```text
+git clone https://github.com/antonbru/hotel-direct.git
+cd hotel-direct
+npm run check
+npm run build
+```
+
+`npm run build` не минифицирует и не собирает бандл: он только упаковывает
+папку `extension/` в `dist/hotel-direct-0.1.3.zip`. Нужен Node.js 20+ и `zip`;
+внешних зависимостей у расширения нет.
+
+### Про лицензию
+
+Проект под MIT. В поле License URL — ссылка на `LICENSE`; отдельный EULA не
+нужен. Если Opera потребует текст, он лежит в том же файле.
+
+### Про приватность
+
+Политика — `docs/PRIVACY.md`: русский текст и краткое английское резюме. Если
+форма всё-таки требует текст, а не URL, скопируйте содержимое файла целиком.

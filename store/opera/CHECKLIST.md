@@ -117,6 +117,34 @@ shasum -a 256 store/opera/hotel-direct-0.2.0.zip
 «Opera Hosting License», выбирайте hosting license; Apache 2.0 противоречил бы
 `LICENSE` в репозитории.
 
+### General — ссылки, лицензия, приватность
+
+Эти поля видны на вкладке **General** (или на второй странице мастера):
+
+- [ ] **Service website URL** — оставить пустым. У расширения нет собственного
+      сервиса; GitHub сюда не подходит, это прямо запрещено подсказкой поля.
+- [ ] **Extension support page URL** — `https://github.com/antonbru/hotel-direct`
+- [ ] **Extension source code URL (public)** — `https://github.com/antonbru/hotel-direct`
+- [ ] **Extension source code URL (required only for Opera moderators)** — тот же
+      репозиторий. Код не минифицирован, но ссылку лучше заполнить.
+- [ ] **Build instructions** — скопировать блок из `LISTING.md`:
+
+```text
+git clone https://github.com/antonbru/hotel-direct.git
+cd hotel-direct
+npm run check
+npm run build
+```
+
+- [ ] **License URL** — `https://github.com/antonbru/hotel-direct/blob/main/LICENSE`
+- [ ] **Full license text** — оставить пустым, достаточно URL.
+- [ ] **Privacy policy URL** — `https://github.com/antonbru/hotel-direct/blob/main/docs/PRIVACY.md`
+- [ ] **Full privacy policy text** — оставить пустым, достаточно URL.
+
+После заполнения всех вкладок нажмите **Submit changes** (зелёная кнопка
+справа). Пока она не нажата, статус будет «there are changes not submitted for
+the moderators review» — модераторы ничего не увидят.
+
 ### Страница 3 — summary и description
 
 - [ ] Вставить краткое описание из `LISTING.md` (RU).
