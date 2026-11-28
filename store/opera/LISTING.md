@@ -217,3 +217,33 @@ npm run build
 
 Политика — `docs/PRIVACY.md`: русский текст и краткое английское резюме. Если
 форма всё-таки требует текст, а не URL, скопируйте содержимое файла целиком.
+
+---
+
+## Changelog / что нового в 0.2.0
+
+### English (en)
+
+```
+Added support for Yandex Travel: the card with the hotel's official website and phone now appears on travel.yandex.ru, alongside Ostrovok and 101hotels.
+
+Data comes from the same public Rosaccreditation registry; there are no new permissions and no new external hosts. If a hotel on Yandex is not in the registry, the card does not appear, as before.
+```
+
+### Русский (ru)
+
+```
+Добавлена поддержка Яндекс Путешествий: карточка с официальным сайтом и телефоном отеля теперь появляется и на travel.yandex.ru, вместе с Островком и 101hotels.
+
+Данные берутся из того же открытого реестра Росаккредитации; новых разрешений и новых внешних адресов нет. Если отель на Яндексе не в реестре — карточка, как и раньше, не появляется.
+```
+
+## Важно про языки в дашборде
+
+Язык **English (en)** — основной и обязательный: summary, description и changelog
+в нём должны быть на английском. Не вставляйте русский текст в английскую
+вкладку: именно так возникает «summary на русском, description пустой».
+
+Если в дашборде есть **Add translation**, добавьте **Русский (ru)** и вставьте
+русские блоки. Если кнопки нет — заполните английский: интерфейс расширения
+всё равно русский, это указано в описании.
